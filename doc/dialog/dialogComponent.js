@@ -2,6 +2,7 @@
 import React from 'react';
 //component
 import mDialog from 'component/m_dialog/mDialog';
+import Mheader from 'component/m_header/mHeader';
 
 class dialogComponent extends React.Component{
 	constructor(props) {
@@ -36,6 +37,7 @@ class dialogComponent extends React.Component{
 		const MSpinner = mDialog.mSpinner;
 		return (
 			<div>
+                <Mheader title="名医主导doc版" needBack="true"/>
 				<ul className="groups">
 					<li className="cell align-item">
 						<button className="btn" onClick={(value)=>this.openDialog('toast')}>open toast</button>

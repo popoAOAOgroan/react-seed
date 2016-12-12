@@ -1,6 +1,8 @@
 import React from 'react'
 //css
 import 'component/m_header/mHeader.scss';
+//component
+import {browserHistory} from 'react-router';
 
 class Mheader extends React.Component{
 	constructor(props){
@@ -8,19 +10,11 @@ class Mheader extends React.Component{
 		//needBack
 		//backCall
 	}
-
-	goBack(){
-		if (this.props.backCall !== undefined && typeof this.props.backCall === 'function') {
-			this.props.backCall();
-		}else{
-			console.log('no callback fn');
-		}
-	}
-
+	
 	render() {
 		let backBtn;
 		if (this.props.needBack) {
-			backBtn = (<button className="back-btn" onClick={()=>this.goBack()}>back</button>);
+			backBtn = (<button className="back-btn" onClick={browserHistory.goBack}>back</button>);
 		}
 		return(
 			<header className="m-header">

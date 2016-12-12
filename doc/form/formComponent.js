@@ -1,7 +1,8 @@
 //react
 import React from 'react';
 //component
-import Form from 'component/m_form/mForm'
+import Form from 'component/m_form/mForm';
+import Mheader from 'component/m_header/mHeader';
 
 class formComponent extends React.Component{
 	constructor(props) {
@@ -38,6 +39,7 @@ class formComponent extends React.Component{
 		];
 		return (
 			<div>
+                <Mheader title="名医主导doc版" needBack="true"/>
 				<ul className="groups">
 					<li className="cell align-item">
 						<label className="cell-label">Radio</label>

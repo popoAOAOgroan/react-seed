@@ -3,6 +3,7 @@ import React from 'react';
 //component
 import ReactIScroll from 'react-iscroll';
 import iScroll from 'iscroll';
+import Mheader from 'component/m_header/mHeader';
 //css
 import './docScroll.scss';
 
@@ -22,6 +23,7 @@ export default class scrollComponent extends React.Component{
 	render() {
 		return (
 			<div className="flex-1 doc-scroll-component">
+                <Mheader title="名医主导doc版" needBack="true"/>
 				<ReactIScroll iScroll={iScroll} options={this.props.options} onScrollStart={()=>this.onScrollStart()}>
 					<ul className="groups">
 						<li className="cell">test1</li>
