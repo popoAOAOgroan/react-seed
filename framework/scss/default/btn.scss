@@ -1,0 +1,30 @@
+@import 'framework/scss/default/variables.scss';
+
+.btn{
+    background: #fff;
+    border: p2r(1px) solid #a7a7a7;
+    border-radius: p2r(5px);
+    width: 100%;
+    line-height: p2r(20px);
+    color: #333;
+    padding: p2r(5px) p2r(5px);
+
+    &.primary-btn{
+        $btn-h: 45px;
+        background: #ff847f;
+        height: p2r($btn-h);
+        color: #fff;
+        border: 0px;
+        font-size: p2r(18px);
+    }
+
+    &.active{
+    	background: #0079b5;
+    	color: #fff;
+    	border-color: #4bd4ff;
+    }
+    &:disabled{
+        background: #ddd;
+    }
+}
+

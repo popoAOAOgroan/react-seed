@@ -1,0 +1,24 @@
+@import 'framework/scss/default/variables.scss';
+
+.m-toast{
+    $toast-body-width: 280px;
+    $toast-body-height: 30px;
+    width: p2r($toast-body-width);
+    height: p2r($toast-body-height);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: p2r(-$toast-body-width/2);
+    margin-top: p2r(-$toast-body-height/2);
+    z-index: 99999;
+    .message {
+        text-align: left;
+        color: #fff;
+        font-size: 1rem;
+        background: rgba(0,0,0,.7);
+        border-radius: p2r(4px);
+        margin: 0 auto;
+        padding: 0.8rem 1rem;
+        color: #fff;
+    }
+}

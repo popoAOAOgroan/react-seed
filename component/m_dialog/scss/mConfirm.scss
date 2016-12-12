@@ -1,0 +1,80 @@
+@import 'framework/scss/default/variables.scss';
+
+.pop-mask{
+    color: green;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 9999;
+}
+.m-confirm, .m-alert{
+    $dialog-body-width: p2r(260px);
+    $title-font-size: 1.2rem;
+    $brand-info: #333;
+    $base-font-size: 1.2rem;
+    $color-border-default: #d7d7d7;
+
+    width: $dialog-body-width;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    margin-left: -$dialog-body-width/2;
+    background: #ffffff;
+    z-index: 99999;
+    border-radius: p2r(6px);
+    overflow: hidden;
+    // .title {
+    //     width: 100%;
+    //     font-size: $title-font-size;
+    //     color: #000;
+    //     text-align: center;
+    //     padding: 10px 5px;
+    // }
+    .contentHtml {
+        padding: p2r(20px) p2r(15px);
+        max-height: p2r(90px);
+        overflow: hidden;
+        text-align: left;
+        font-size: $base-font-size;
+        color: #666;
+        border-bottom: p2r(1px) solid $color-border-default;
+        &.no-title{
+            padding: p2r(30px) p2r(20px);
+        }
+    }
+    .alertButton {
+        text-align: center;
+        button{
+            width: 100%;
+            font-size: $base-font-size;
+            color: $brand-info;
+            border: none;
+        }
+    }
+    .confirmButton {
+        text-align: center;
+        .btn-left, .btn-right {
+            width: 50%;
+            float: left;
+            button{
+                width: 100%;
+                font-size: $base-font-size;
+                color: $brand-info;
+                border: none;
+            }
+        }
+        .btn-left {
+            border-right: p2r(1px) solid $color-border-default;
+            button{
+                color: #666;
+            }
+        }
+        .btn-right {
+            color: $brand-info;
+        }
+    }
+    
+}

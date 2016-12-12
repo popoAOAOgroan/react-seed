@@ -1,0 +1,48 @@
+
+@import './default/group.scss';
+@import './default/btn.scss';
+
+
+input[type='date']{
+    background: none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    text-align: right;
+    direction: rtl;
+    &::-webkit-clear-button {
+     -webkit-appearance: none;
+      display: none;
+    }
+    &::-webkit-inner-spin-button,
+    &::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+    }
+}
+
+#content{
+	// width: 100%;
+	// height: 100%;
+}
+.left{
+	text-align:left;
+}
+.right{
+	text-align:right;
+}
+.content{
+	height:100%;
+	display: flex;
+	flex-direction: column;
+    .flex-1{
+        flex:1;
+    }
+}
+.flex-l{
+    display: flex;
+    flex-direction: initial;
+    .flex-1{
+        flex:1;
+    }
+}

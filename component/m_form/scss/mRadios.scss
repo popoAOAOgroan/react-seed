@@ -1,0 +1,116 @@
+@import 'framework/scss/default/variables.scss';
+
+.circle-check {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    background: #333;
+    &:before {
+        content: '';
+        width: 50%;
+        height: 25%;
+        display: block;
+        position: absolute;
+        border-width: 0 0 p2r(3px) p2r(3px);
+        border-style:solid;
+        border-color: #fff;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        left: 19%;
+        top: 22%;
+    }
+}
+.m-radio{
+    text-align: left;
+    &:after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+    input[type="radio"]{
+        //position: absolute;
+        //top: 50%;
+        //.px2rem(margin-top, 4);
+        //.px2rem(left, 4);
+    }
+    .label-text{
+        line-height:p2r(42px);
+        font-size: p2r(34px);
+        margin-top: p2r(24px);
+        color: #999;
+        float: left;
+        margin-left: p2r(18px);
+    }
+    &.radio-l .radio-box{
+        float: left;
+        &:first-child{
+            margin-left: 0px;
+        }
+    }
+    &.radio-r .radio-box{
+        float: right;
+        &:last-child{
+            margin-left: 0px;
+        }
+    }
+}
+.m-radio .radio-box{
+    $input-height: p2r(30px);
+    $brand-danger: #ff857e;
+    $color-border-default: #f1f1f1;
+    height: $input-height;
+    position: relative;
+    margin-left: p2r(10px);
+    float: left;
+    &:first-child{
+        margin-left: 0px;
+    }
+    input[type="radio"]{
+        position: absolute;
+        top: p2r(5px);
+        // left: px2rem(0px);
+        display: none;
+    }
+    label{
+        display: block;
+        height: $input-height;
+        line-height: $input-height;
+        min-width: p2r(30px);
+        .check{
+            display: block;
+            width: $input-height * 0.6;
+            height:$input-height * 0.6;
+            margin-top: $input-height * 0.15;
+            float:left;
+            .circle-check{
+                background: $brand-danger;
+                &:before{
+                    border-width: 0 0 p2r(2px) p2r(2px);
+                    top: 24%;
+                }
+                &.uncheck{
+                    border: p2r(1px) solid $color-border-default;
+                    background: #fff;
+                    &:before{
+                        border-width: 0;
+                    }
+                }
+            }
+        }
+        .text{
+            font-size:13px;
+            color: #000;
+            padding: 0 p2r(10px) 0 p2r(5px);
+            &.uncheck{
+                color: #bbb;
+            }
+        }
+    }
+}

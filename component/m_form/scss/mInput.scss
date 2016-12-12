@@ -1,0 +1,25 @@
+
+.m-input, .m-textarea{
+	&.warning{
+		color: #900;
+		&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	    	color:    #900;
+		}
+		&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:    #900;
+		   opacity:  1;
+		}
+		&::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:    #900;
+		   opacity:  1;
+		}
+		&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		   color:    #900;
+		}
+	}
+}
+
+.m-textarea{
+	width: 100%;
+	min-height: 3rem;
+}

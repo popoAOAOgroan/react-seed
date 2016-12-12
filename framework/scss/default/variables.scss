@@ -1,0 +1,8 @@
+
+$color-primary: #8fead2;
+$base-font-size: 1rem;
+$color-border-default: #f1f1f1;
+
+@function p2r ($px){
+    @return $px / 12px * 1rem;
+}
