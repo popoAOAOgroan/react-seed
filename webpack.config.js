@@ -13,7 +13,7 @@ if(env === 'product'){
     plugins = [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: "名医主刀移动版",
+            title: "react-seed",
             template: path.resolve(__dirname, 'templates/index.ejs'),
             inject: 'body',
             chunks: ['index']
@@ -38,14 +38,14 @@ if(env === 'product'){
     plugins = [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: "名医主刀移动版",
+            title: "react-seed",
             template: path.resolve(__dirname, 'templates/index.ejs'),
             inject: 'body',
             chunks: ['index'],
             filename: './index.html'
         }),
         new HtmlWebpackPlugin({
-            title: "名医主刀移动版_React_doc",
+            title: "react-doc",
             template: path.resolve(__dirname, 'templates/doc.ejs'),
             inject: 'body',
             chunks: ['doc/index'],
