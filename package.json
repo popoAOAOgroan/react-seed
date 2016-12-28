@@ -4,9 +4,12 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
+    "antd-mobile": "^0.9.13",
     "babel": "^6.5.2",
     "babel-plugin-module-alias": "^1.6.0",
+    "chai": "^3.5.0",
     "file-loader": "^0.9.0",
+    "mocha": "^3.2.0",
     "querystring": "^0.2.0",
     "react-iscroll": "^1.1.1",
     "url-loader": "^0.5.7",
@@ -63,7 +66,7 @@
     ]
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "build": "export WEBPACK_ENV=product&&webpack",
     "dev": "export WEBPACK_ENV=dev&&webpack --colors --watch",
     "server": "node live-server.js"

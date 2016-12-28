@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+
 //css
 import 'framework/scss/normalize.scss';
 import 'framework/scss/reset.scss';
@@ -18,8 +19,11 @@ class Index extends React.Component{
 
 class Home extends React.Component{
     render() {
+        // lc32.handleChange('()()((()');
         return (
-            <div>React seed</div>
+            <div>
+                <h1>React seed</h1>
+            </div>
         );
     }
 }
