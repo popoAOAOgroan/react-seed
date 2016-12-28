@@ -10,7 +10,11 @@ class Mheader extends React.Component{
 		//needBack
 		//backCall
 	}
-	
+
+	static defaultProps = {
+		title: 'im title'
+	}
+
 	render() {
 		let backBtn;
 		if (this.props.needBack) {

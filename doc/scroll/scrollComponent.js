@@ -22,9 +22,9 @@ export default class scrollComponent extends React.Component{
 	}
 	render() {
 		return (
-			<div className="flex-1 doc-scroll-component">
-                <Mheader title="名医主导doc版" needBack="true"/>
-				<ReactIScroll iScroll={iScroll} options={this.props.options} onScrollStart={()=>this.onScrollStart()}>
+			<div className="flex-l doc-scroll-component">
+                <Mheader title="react-seed-doc" needBack="true"/>
+				<ReactIScroll className="flex-1 scroll-content" iScroll={iScroll} options={this.props.options} onScrollStart={()=>this.onScrollStart()}>
 					<ul className="groups">
 						<li className="cell">test1</li>
 						<li className="cell">test</li>

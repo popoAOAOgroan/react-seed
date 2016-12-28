@@ -11,12 +11,13 @@ class List extends React.Component{
 	render() {
 		return ( 
 			<div>
-                <Mheader title="名医主导doc版" needBack={false}/>
+                <Mheader title="components doc" needBack={false}/>
 
-				<ul className="groups flex-1">
-					<li className="cell"><Link to="/dialog">dialog</Link></li>
-					<li className="cell"><Link to="/form">form</Link></li>
-					<li className="cell"><Link to="/iscroll">iscroll</Link></li>
+				<ul className="groups flex-1 doc-home-list">
+					<li className="cell"><Link to="/doc/dialog">dialog</Link></li>
+					<li className="cell"><Link to="/doc/form">form</Link></li>
+					<li className="cell"><Link to="/doc/iscroll">iscroll</Link></li>
+					<li className="cell"><Link to="/doc/test">test</Link></li>
 				</ul>
 			</div>
 		)

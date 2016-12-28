@@ -30,14 +30,13 @@ class dialogComponent extends React.Component{
 	}
 	render() {
 		let dialogs;
-		console.log('state',this.state.dialog);
 		const MToast = mDialog.mToast;
 		const MConfirm = mDialog.mConfirm;
 		const MAlert = mDialog.mAlert;
 		const MSpinner = mDialog.mSpinner;
 		return (
 			<div>
-                <Mheader title="名医主导doc版" needBack="true"/>
+                <Mheader title="react-seed-doc" needBack="true"/>
 				<ul className="groups">
 					<li className="cell align-item">
 						<button className="btn" onClick={(value)=>this.openDialog('toast')}>open toast</button>

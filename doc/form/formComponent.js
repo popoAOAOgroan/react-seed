@@ -9,13 +9,13 @@ class formComponent extends React.Component{
 		super(props);
 	}
 	getRadioValue(value){
-		console.log('radioValue: '+value);
+		// console.log('radioValue: '+value);
 	}
 	checkFormValue(){
-		console.log('state',this.state);
+		// console.log('state',this.state);
 	}
 	checkFrom(iObj){
-		console.log('iObj',iObj);
+		// console.log('iObj',iObj);
 		this.setState({
 			[`${iObj.name}`]: iObj.value,
 		},this.checkFormValue);
@@ -39,7 +39,7 @@ class formComponent extends React.Component{
 		];
 		return (
 			<div>
-                <Mheader title="名医主导doc版" needBack="true"/>
+                <Mheader title="react-seed-doc" needBack="true"/>
 				<ul className="groups">
 					<li className="cell align-item">
 						<label className="cell-label">Radio</label>

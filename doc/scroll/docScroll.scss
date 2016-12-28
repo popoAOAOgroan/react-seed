@@ -1,4 +1,8 @@
 .doc-scroll-component{
 	// position: relative;
-	height: 90%;
+	flex-direction: column;
+	height: 100%;
+	.scroll-content{
+
+	}
 }

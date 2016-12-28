@@ -11,14 +11,14 @@ import Home from 'doc/home';
 import FormComponent from 'doc/form/formComponent';
 import DialogComponent from 'doc/dialog/dialogComponent';
 import ScrollComponent from 'doc/scroll/scrollComponent';
+import TestComponent from 'doc/test/testComponent';
 
 
 class Index extends React.Component{
     render() {
+        // console.log('cur router',this.context.router.getCurrentRoutes());
         return (
-            <div>
-                <div>{this.props.children}</div>
-            </div>
+            <div>{this.props.children}</div>
         );
     }
 }
@@ -29,10 +29,11 @@ class Comment extends React.Component{
             <Router history={browserHistory}>
                 <Route path="/doc" component={Index}>
                     <IndexRoute component={Home}/>
-                    <Route path="/home" component={Home}/>
-                    <Route path="/form" component={FormComponent}/>
-                    <Route path="/dialog" component={DialogComponent}/>
-                    <Route path="/iscroll" component={ScrollComponent}/>
+                    <Route path="home" component={Home}/>
+                    <Route path="form" component={FormComponent}/>
+                    <Route path="dialog" component={DialogComponent}/>
+                    <Route path="iscroll" component={ScrollComponent}/>
+                    <Route path="test" component={TestComponent}/>
                 </Route>
             </Router>
         );
