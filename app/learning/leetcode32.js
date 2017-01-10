@@ -47,7 +47,8 @@ const leetcode32 = {
                 if (_j!==false) {
                     _array.push(i);
                     let _m = _checkArrayMini(_j);
-                    _max = (i - _m) > _max ? (i-_m): _max;
+                    _max = Math.max((i - _m),_max);
+                    // _max = (i - _m) > _max ? (i-_m): _max;
                 }
             }
         });
