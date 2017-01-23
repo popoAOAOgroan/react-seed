@@ -29,3 +29,22 @@ uu3.prototype.eatSomething = function(){
 	console.log(this.name + 'eat something');
 }
 //当new一个新uu3时会开辟新的内存空间，不包括原型
+
+var uu4 = function(name,age){
+	var man = {
+		'name': name,
+		'age': age
+	}
+	return function(){
+		return man;
+	}
+}
+//每次调用都创建一个新的内存区域。
+
+function synFun(name,age,callNameFun){
+	var _name = name;
+	var _age = age;
+	return callNameFun(_name,age);
+}
+synFun('uu','12',function(name,age){console.log(name,age)});
+

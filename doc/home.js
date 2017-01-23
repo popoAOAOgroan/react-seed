@@ -18,6 +18,7 @@ class List extends React.Component{
 					<li className="cell"><Link to="/doc/form">form</Link></li>
 					<li className="cell"><Link to="/doc/iscroll">iscroll</Link></li>
 					<li className="cell"><Link to="/doc/test">test</Link></li>
+					<li className="cell"><Link to="/doc/list">list</Link></li>
 				</ul>
 			</div>
 		)

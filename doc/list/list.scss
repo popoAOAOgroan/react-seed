@@ -1,0 +1,40 @@
+@import 'framework/scss/default/variables.scss';
+
+.doc-list-view{
+	width:100%;
+	height:100%;
+}
+
+.temp-del-btn{
+	width: 50%;
+	float: right;
+}
+
+.m-list{
+	#m-scroller{
+		>ul{
+			>li{
+				height: p2r(85px); //内部li与cell高度保持一致
+			}
+		}
+	}
+	.doc-cell{
+		width: 100%;
+		height: p2r(85px);
+		padding: 1rem;
+		line-height: p2r(32px);
+		border-bottom: 1px solid #ccc;
+		border-top: 1px solid #fff;
+		background-color: #fafafa;
+		font-size: 14px;
+	}
+	.m-hide-layer{
+		direction: rtl;
+		>li{
+			width: 20%;
+			padding: 1rem;
+			line-height: p2r(32px);
+			font-size: 14px;
+		}
+	}
+}

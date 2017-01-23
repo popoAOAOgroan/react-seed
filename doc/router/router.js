@@ -12,6 +12,7 @@ import FormComponent from 'doc/form/formComponent';
 import DialogComponent from 'doc/dialog/dialogComponent';
 import ScrollComponent from 'doc/scroll/scrollComponent';
 import TestComponent from 'doc/test/testComponent';
+import ListComponent from 'doc/list/listComponent';
 
 
 class Index extends React.Component{
@@ -34,6 +35,7 @@ class Comment extends React.Component{
                     <Route path="dialog" component={DialogComponent}/>
                     <Route path="iscroll" component={ScrollComponent}/>
                     <Route path="test" component={TestComponent}/>
+                    <Route path="list" component={ListComponent}/>
                 </Route>
             </Router>
         );
