@@ -57,7 +57,7 @@ class ListComponent extends React.Component{
 		return (
 			<div className="flex-l doc-list-view">
                 <Mheader title="react-seed-doc" needBack="true"/>
-				<Mlist listCallBack={(cell,operation,callBack)=>this.listCallBack(cell,operation,callBack)} data={myArray} diyCell={ListCell}/>
+				<Mlist listCallBack={(cell,operation,callBack)=>this.listCallBack(cell,operation,callBack)} opts={myOpt} data={myArray} diyCell={ListCell}/>
 			</div>
 		)
 	}
