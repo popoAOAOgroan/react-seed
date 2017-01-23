@@ -10,9 +10,6 @@ let myScroll,activeCellCallBack;
 class Mlist extends React.Component{
 	constructor(props){
 		super(props);
-		this.state = {
-			'curDelIndex': false
-		}
 	}
 	componentDidMount(){
 		myScroll = new IScroll('#m-wrapper', { mouseWheel: true, click: true });
@@ -30,15 +27,19 @@ class Mlist extends React.Component{
 	}
 	cellCallBack(cell,operation,callBack){
 		// let listObj = JSON.parse(JSON.stringify(this.state.data.results));
-		if (operation == 'del') {
-			callBack && callBack();
-		}
+		// if (operation == 'del') {
+		// 	callBack && callBack();
+		// 	return true;
+		// }
 		if (operation == 'refresh') {
 			this.scrollNeedRefresh();
+			return true;
 		}
 		if (operation == 'registerCell') {
 			activeCellCallBack = callBack;
+			return true;
 		}
+		return this.props.listCallBack(cell,operation,callBack);
 	}
 	onScrolling(){
 		// console.log('scrolling');
@@ -57,7 +58,7 @@ class Mlist extends React.Component{
 							{
 								dataList.map((v,i)=>{
 									let cellContent = {'value':v,'index':i};
-									return <Mcell diyCell={diyCell} data={cellContent} hide={this.props.hide} key={i} callParent={(cell,operation,callBack)=>this.cellCallBack(cell,operation,callBack)}/>
+									return <Mcell opts={this.props.opts} diyCell={diyCell} data={cellContent} key={i} callParent={(cell,operation,callBack)=>this.cellCallBack(cell,operation,callBack)}/>
 								})
 							}
 						</ul>

@@ -14,7 +14,7 @@
 	#m-scroller{
 		>ul{
 			>li{
-				height: p2r(85px); //内部li与cell高度保持一致
+				height: p2r(85px); //如果需要自定义内容，务必内部li与cell高度保持一致
 			}
 		}
 	}

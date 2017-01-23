@@ -8,9 +8,10 @@ import {browserHistory} from 'react-router';
 
 let touchStartX,touchCurX,touchEndX;
 let touchStartY,touchCurY,touchEndY;
-let maxScrollWidth = -(screen.width * 0.2);
-let screeningHeightValue = 10;
-				
+let maxScrollWidth = 0;// 通过opts array计算
+let screeningHValue = 10;
+let screeningWValue = -(screen.width * 0.1);
+
 {/*默认cell*/}
 class MDefaultCell extends React.Component{
 	constructor(props){
@@ -40,6 +41,10 @@ class Mcell extends React.Component{
 		}
 	}
 
+	componentWillMount(){
+		let optsArray = this.props.opts?this.props.opts:[];
+		maxScrollWidth = window.screen.width * -0.2 * optsArray.length;
+	}
 	componentDidMount(){
 	}
 
@@ -53,7 +58,6 @@ class Mcell extends React.Component{
 	}
 
 	componentWillUnmount(){
-		
 	}
 
 	handleTouchStart(e){
@@ -73,7 +77,7 @@ class Mcell extends React.Component{
 
 		touchCurY = e.touches[0].clientY;
 		let distHeight = touchStartY - touchCurY;
-		if (Math.abs(distHeight) > screeningHeightValue) {
+		if (Math.abs(distHeight) > screeningHValue) {
 			return true;
 		}
 
@@ -92,7 +96,7 @@ class Mcell extends React.Component{
 		// e.preventDefault();
 
 		if (this.state.curXposition < 0) {
-			if (this.state.curXposition > maxScrollWidth) {
+			if (this.state.curXposition > screeningWValue) {
 				this.setCurPositionBack()
 			}else{
 				this.setState({
@@ -117,11 +121,11 @@ class Mcell extends React.Component{
 		}
 	}
 
-	delCell(e){
+	cellOptClick(optsName){
 	    // e.preventDefault();
 	    // e.stopPropagation();
 		let cell = this.props.data;
-		this.props.callParent(cell,'del',()=>this.callBackFun());
+		this.props.callParent(cell,optsName,()=>this.callBackFun());
 	}
 
 	callBackFun(){
@@ -132,14 +136,21 @@ class Mcell extends React.Component{
 
 	render() {
 		let InnerCell = this.props.diyCell == 'default'? MDefaultCell : this.props.diyCell;
-		if (this.props.hide) {
+		//判断是否有opts应该由opts length来
+		let optsArray = this.props.opts;
+		if (optsArray && optsArray.length>0) {
 			return(
 				<li className={this.state.delCell?this.state.liDefaultClassName+' '+this.state.liDelClassName:this.state.liDefaultClassName}>
 					<div className="m-cell-content" style={{transform:'translateX('+this.state.curXposition + 'px)'}} onTouchStart={(e)=>this.handleTouchStart(e)} onTouchMove={(e)=>this.handleTouchMove(e)} onTouchEnd={(e)=>this.handleTouchEnd(e)}>
 						<InnerCell data={this.props.data}/>
 					</div>
 					<ul onClick={(e)=>this.clickHandle(e)} style={this.state.curXposition == maxScrollWidth? {zIndex:'1'}: {zIndex:'-1'}} className="m-hide-layer flex-v">
-						<li><button className="btn" onClick={(e)=>this.delCell(e)}>删除</button></li>
+						{
+							optsArray.map((v,i)=>{
+								let optsName = v.name;
+								return (<li key={i}><button className={v.className} onClick={()=>this.cellOptClick(optsName)}>{v.text}</button></li>)
+							})
+						}
 					</ul>
 				</li>
 			);

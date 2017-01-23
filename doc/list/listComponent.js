@@ -20,7 +20,6 @@ class ListCell extends React.Component{
 		super(props);
 	}
 	render(){
-		console.log('this.props.',this.props.data)
 		return (
 			<div className="doc-cell">
 				<p>main:{this.props.data.value.content}</p>
@@ -34,12 +33,31 @@ class ListComponent extends React.Component{
 	constructor(props) {
 		super(props);
 	}
+	listCallBack(cell,operation,callBack){
+		// let listObj = JSON.parse(JSON.stringify(this.state.data.results));
+		console.log('o! call the ',operation);
+		if (operation == 'del') {
+			callBack && callBack();
+			return true;
+		}
+	}
 	render() {
-		// 
+		let myOpt = [
+			{
+				text: '删除',
+				name: 'del',
+				className: 'doc-del-btn btn'
+			},
+			{
+				text: '其他',
+				name: 'other',
+				className: 'doc-other-btn btn'
+			}
+		];
 		return (
 			<div className="flex-l doc-list-view">
                 <Mheader title="react-seed-doc" needBack="true"/>
-				<Mlist data={myArray} hide={true} diyCell={ListCell}/>
+				<Mlist listCallBack={(cell,operation,callBack)=>this.listCallBack(cell,operation,callBack)} data={myArray} diyCell={ListCell}/>
 			</div>
 		)
 	}
