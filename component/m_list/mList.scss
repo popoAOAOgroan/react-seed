@@ -48,6 +48,12 @@
 				height: 0px;
 				overflow: hidden;
 			}
+			&:last-child{
+				border-bottom: 0px;
+				div{
+					border-bottom: 0px;
+				}
+			}
 			.m-cell-inner{
 				height: 58px;
 			}
@@ -64,8 +70,10 @@
 	    height: 100%;
 	    z-index: -1;
 	    position: relative;
+	    direction: rtl;
 	    // background: $hide-layer-bg;
 	    >li{
+			width: 20%;
 	    	background: $hide-layer-bg;
 	    	height: 100%;
 	    }

@@ -2,11 +2,13 @@
 
 .m-header{
 	$header-h: 40px;
-	$header-bg-color: #eee;
+	$header-bg-color: linear-gradient( 90deg, rgb(108,66,223), rgb(137,117,218)); ;
+	$header-color: #fff;
 
 	width: 100%;
 	height: p2r($header-h);
 	line-height:  p2r($header-h);
+	color: $header-color;
 	// display: flex;
 	background: $header-bg-color;
 	&:after{
@@ -25,6 +27,7 @@
 		text-align: center;
 		float: left;
 		height: 100%;
+		color: inherit;
 	}
 	.right-box{
 		width: 15%;

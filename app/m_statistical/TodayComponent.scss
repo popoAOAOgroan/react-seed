@@ -1,0 +1,74 @@
+@import 'framework/scss/default/variables.scss';
+
+.today-layer{
+	color: #fff;
+
+	.today-search{
+		height: p2r(40px);
+		padding: p2r(10px);
+		background: rgb(21,23,30);
+		>input{
+			width: 90%;
+			display: inline-block;
+			background: rgb(21,23,30);
+			color: #fff;
+		}
+		>i{    
+			width: 10%;
+    		display: inline-block;
+    		color: #fff;
+    		text-align: center;
+		}
+	}
+
+	.today-list{
+		$list-height: 70px;
+		$list-padding: 10px;
+		padding: 0 p2r(20px);
+		.today-cell{
+			height: p2r($list-height);
+			border-bottom: 1px solid rgb(48,46,59);
+			padding: p2r($list-padding) 0;
+			.league-name{
+				display: inline-block;
+				color: #fff;
+				font-size: p2r(20px);
+				line-height: p2r($list-height - ($list-padding*2));
+				height: 100%;
+				width: auto;
+    			float: left;
+			}
+			.league-icon{
+				$icon-wh: $list-height - ($list-padding*2);
+				$icon-color: #edeeff;
+				display: inline-block;
+				width: p2r($icon-wh);
+				height: p2r($icon-wh);
+				border-radius: p2r($icon-wh/2);
+				background: rgb(48,46,59);
+				margin-right: p2r(30px);
+    			float: left;
+    			&.dj-icon{
+					background: $icon-color url('./images/dj.png') no-repeat center center;
+	    			background-size: cover;
+    			}
+    			&.fj-icon{
+					background: $icon-color url('./images/fj.png') no-repeat center center;
+	    			background-size: cover;
+    			}
+    			&.xj-icon{
+					background: $icon-color url('./images/xj.png') no-repeat center center;
+	    			background-size: cover;
+    			}
+    			&.yc-icon{
+					background: $icon-color url('./images/yc.png') no-repeat center center;
+	    			background-size: cover;
+    			}
+    			&.yj-icon{
+					background: $icon-color url('./images/yj.png') no-repeat center center;
+	    			background-size: cover;
+    			}
+			}
+		}
+	}
+}

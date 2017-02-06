@@ -1,0 +1,46 @@
+@import 'framework/scss/default/variables.scss';
+
+.record-layer{
+	color: #fff;
+	.record-list{
+	}
+	.record-cell{
+		margin-bottom: p2r(20px);
+		p{
+			color: #fff;
+		    line-height: 3rem;
+		    padding: 0 1rem;
+		    font-size: 1.2rem;
+		}
+		.league-icon{
+			$icon-wh: 25px;
+			$icon-color: #edeeff;
+			display: inline-block;
+			width: p2r($icon-wh);
+			height: p2r($icon-wh);
+			border-radius: p2r($icon-wh/2);
+			background: rgb(48,46,59);
+			margin-right: p2r(30px);
+			&.dj-icon{
+				background: $icon-color url('./images/dj.png') no-repeat center center;
+    			background-size: cover;
+			}
+			&.fj-icon{
+				background: $icon-color url('./images/fj.png') no-repeat center center;
+    			background-size: cover;
+			}
+			&.xj-icon{
+				background: $icon-color url('./images/xj.png') no-repeat center center;
+    			background-size: cover;
+			}
+			&.yc-icon{
+				background: $icon-color url('./images/yc.png') no-repeat center center;
+    			background-size: cover;
+			}
+			&.yj-icon{
+				background: $icon-color url('./images/yj.png') no-repeat center center;
+    			background-size: cover;
+			}
+		}
+	}
+}

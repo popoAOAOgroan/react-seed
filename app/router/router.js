@@ -8,6 +8,8 @@ import 'framework/scss/normalize.scss';
 import 'framework/scss/reset.scss';
 import 'framework/scss/theme.scss';
 
+//home
+import HomeComponent from 'app/m_statistical/HomeComponent';
 
 class Index extends React.Component{
     render() {
@@ -19,7 +21,6 @@ class Index extends React.Component{
 
 class Home extends React.Component{
     render() {
-        // lc32.handleChange('()()((()');
         return (
             <div>
                 <h1>React seed</h1>
@@ -33,7 +34,7 @@ class Comment extends React.Component{
         return (
             <Router history={browserHistory}>
                 <Route path="/" component={Index}>
-                    <IndexRoute component={Home}/>
+                    <IndexRoute component={HomeComponent}/>
                 </Route>
             </Router>
         );

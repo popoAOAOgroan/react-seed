@@ -1,7 +1,10 @@
 @import 'framework/scss/default/variables.scss';
 
+@import "./fontIcon/iconfont.css";
 @import './default/group.scss';
 @import './default/btn.scss';
+@import './default/nav.scss';
+@import './default/input.scss';
 
 
 input[type='date']{
@@ -53,4 +56,11 @@ input[type='date']{
     .flex-1{
         flex:1;
     }
+}
+.blurme{
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
 }

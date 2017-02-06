@@ -1,0 +1,29 @@
+.m-nav{
+	$nav-height: 55px;
+	$nav-color-bg: rgb(21,23,30);
+	$nav-active-color: #fff;
+	$nav-color: rgb(98,98,104);
+
+	width: 100%;
+	height: $nav-height;
+	background: $nav-color-bg;
+	color: $nav-color;
+
+	ul>li{
+		height: 100%;
+		line-height: $nav-height;
+		text-align: center;
+		color: $nav-color;
+		&.active{
+			color: $nav-active-color;
+		}
+		&:before{
+
+		}
+	}
+}
+.m-contnet{
+	$content-color-bg: rgb(25,26,39);
+
+	background: $content-color-bg;
+}
