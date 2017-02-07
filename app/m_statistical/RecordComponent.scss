@@ -3,10 +3,15 @@
 .record-layer{
 	color: #fff;
 	.record-list{
+		padding: 1rem;
 	}
 	.record-cell{
 		margin-bottom: p2r(20px);
 		p{
+			&:first-child{
+				border-bottom: 1px solid #3e3e3e;
+    			height: 3rem;
+			}
 			color: #fff;
 		    line-height: 3rem;
 		    padding: 0 1rem;

@@ -66,13 +66,13 @@ class TodayComponent extends React.Component{
 		let ListCell = TodayCellComponent;
 		// let myArray = [{content:'英超',iconName:'yc-icon',items:['阿森纳','切尔西','曼联','曼城','热刺','埃弗顿','利物浦','西布罗姆维奇','斯旺西','西汉姆联','莱斯特城','水晶宫','斯托克城','南安普顿','桑德兰','伯恩茅斯','沃特福德']},{content:'西甲',iconName:'xj-icon'},{content:'意甲',iconName:'yj-icon'},{content:'法甲',iconName:'fj-icon'},{content:'德甲',iconName:'dj-icon'}];
 		return(
-			<div className="today-layer flex-l">
+			<div className="today-layer">
 				<div className="today-search">
 					<i className="iconfont icon-search"></i>
 					{/*<input x-webkit-speech name="search" type="text" placeholder="SEARCH"/>*/}
 					<MInput name="search" type="text" placeholder="SEARCH"/>
 				</div>
-				<div className="today-list flex-1">
+				<div className="today-list">
 					{
 						this.props.data.map((v,i)=>{
 							return( <ListCell data={v} key={i} callBackFn={this.props.callBack}/>);

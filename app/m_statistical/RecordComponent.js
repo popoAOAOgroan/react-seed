@@ -45,7 +45,8 @@ class RecordComponent extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: this.getTodayItems()
+			data: this.getTodayItems(),
+			lastData: this.getLastItems()
 		}
 	}
 	getTodayItems() {
@@ -55,7 +56,12 @@ class RecordComponent extends React.Component{
 		});
 		return itemsArray;
 	}
+	getLastItems() {
+		let itemsObj = dataConfig.getAllItem();
+		return itemsObj
+	}
 	render(){
+		console.log('lastData',this.state.lastData);
 		return(
 			<div className="record-layer">
 				<Title name="Today"/>

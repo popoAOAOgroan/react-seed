@@ -39,6 +39,14 @@ import storage from 'framework/js/provider/storage/storage';
 		TODAY_ITEM_STORAGE.putItem('data',itemInfo);
 	};
 
+	var _getItemNum = function(_itemInfo){
+		let allItemArray = [];
+		Object.key(_itemInfo).every(key=>{
+			allItemArray = allItemArray.concat(_itemInfo[key]);
+		});
+		return allItemArray.length;
+	}
+
 	var _checkItemTimeOver = function(){
 		let lastTime = new Date(TODAY_ITEM_STORAGE.getItem('time')).toDateString();
 		let curTime = new Date().toDateString();
@@ -47,16 +55,21 @@ import storage from 'framework/js/provider/storage/storage';
 		if (lastTime<curTime) {
 			allItem = allItem.concat({
 				time: new Date().getTime(),
-				data: itemInfo
+				data: itemInfo,
+				itemNum: _getItemNum(itemInfo)
 			});
 			ALL_ITEM_STORAGE.putItem('data',allItem);
 			itemInfo = defaultItemInfo;
 			_setTodayItem(itemInfo);
 		}
 	};
+
 	_checkItemTimeOver();
 
 	const itemFn = {
+		getAllItem : function(){
+			return allItem;
+		},
 		getTodayItem : function(){
 			return itemInfo;
 		},
