@@ -5,11 +5,11 @@
 	.record-list{
 		padding: 1rem;
 	}
-	.record-cell{
+	.record-cell,.record-layer__last-day-cell{
 		margin-bottom: p2r(20px);
 		p{
 			&:first-child{
-				border-bottom: 1px solid #3e3e3e;
+				border-bottom: 1px solid #292a38;
     			height: 3rem;
 			}
 			color: #fff;

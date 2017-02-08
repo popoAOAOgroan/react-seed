@@ -15,7 +15,7 @@ class Title extends React.Component{
 	}
 }
 
-class TodaylegCellComponent extends React.Component{
+class LegCellComponent extends React.Component{
 	constructor(props) {
 		super(props);
 	}
@@ -41,34 +41,71 @@ class TodaylegCellComponent extends React.Component{
 	}
 }
 
+class DayCellComponent extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+	getDayItems(dayObj) {
+		console.log('dayObj',dayObj);
+		let itemsArray = Object.keys(dayObj).map((key)=>{
+			return {l:key,n:dayObj[key]}
+		});
+		console.log('itemsArray',itemsArray);
+		return itemsArray;
+	}
+	render(){
+		let dayArray = this.getDayItems(this.props.data.data);
+		if (dayArray.length>0) {
+			let dayDate = this.props.data.time!=''? new Date(this.props.data.time).toDateString():'Today';
+			
+			return(
+				<div className="record-layer__last-day-cell">
+					<Title name={dayDate}/>
+					{
+						dayArray.map((v,i)=>{
+							return <LegCellComponent data={v} key={i}/>;
+						})
+					}
+				</div>
+			)
+		}else{
+			return null;
+		}
+	}
+}
+
 class RecordComponent extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: this.getTodayItems(),
-			lastData: this.getLastItems()
+			data: dataConfig.getTodayItem(),
+			lastData: dataConfig.getAllItem()
 		}
 	}
-	getTodayItems() {
-		let itemsObj = dataConfig.getTodayItem();
-		let itemsArray = Object.keys(itemsObj).map((key)=>{
-			return {l:key,n:itemsObj[key]}
-		});
-		return itemsArray;
-	}
-	getLastItems() {
-		let itemsObj = dataConfig.getAllItem();
-		return itemsObj
-	}
+	// getTodayItems() {
+	// 	let itemsObj = dataConfig.getTodayItem();
+	// 	let itemsArray = Object.keys(itemsObj).map((key)=>{
+	// 		return {l:key,n:itemsObj[key]}
+	// 	});
+	// 	return itemsArray;
+	// }
+	// getLastItems() {
+	// 	let itemsObj = dataConfig.getAllItem();
+	// 	console.log('itemsObj',itemsObj);
+	// 	return itemsObj;
+	// }
 	render(){
-		console.log('lastData',this.state.lastData);
+		let todayComponentData = {
+			time: '',
+			data: this.state.data
+		}
 		return(
 			<div className="record-layer">
-				<Title name="Today"/>
 				<div className="record-list">
+					<DayCellComponent data={todayComponentData} />
 					{
-						this.state.data.map((v,i)=>{
-							return( <TodaylegCellComponent data={v} key={i}/>);
+						this.state.lastData.map((v,i)=>{
+							return (<DayCellComponent data={v} key={i} />)
 						})
 					}
 				</div>

@@ -4,10 +4,10 @@
         module.exports = factory();
     } else if (typeof define === 'function' && define.amd) {
         // AMD
-        define(['dataConfig'], factory);
+        define(factory);
     } else {
         // Global Variables
-        factory(root);
+        factory();
     }
 }(this, function () {
     'use strict';
